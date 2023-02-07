@@ -9,10 +9,10 @@ Rikamonka
   
 # To Do List
 
-[X]Keep Being Cute
-[]Find music and put in musi file
-[]Find some Sound effects
-[]ACtuallt make it
+ - [X]Keep Being Cute  
+ - []Find music and put in musi file
+ - []Find some Sound effects
+ - []Actually make it
 
 <del> <del/>
 
