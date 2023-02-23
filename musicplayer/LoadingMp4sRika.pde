@@ -10,11 +10,11 @@ void loadingMp4s() {
   //
   //Concatenation of Pathway + File Name
   String musicPathway = "../Music/"; //From Sketch to Music Folder
-  String soundEffectPathway = "../Sound Effects/"; //From Sketch to Sound Effect Folder
+  String soundEffectPathway = "../soundeffects/"; //From Sketch to Sound Effect Folder
   String FuwaFileName = "fuwa.mp3";
   String angelFileName = "angel.mp3";
   String spearofjusticeFileName = "Spear_of_Justice.mid";
-  String zeldaFileName = "Zelda.mp3";
+  String ZeldaFileName = "Zelda.mp3";
   song0 = minim.loadFile( musicPathway + FuwaFileName );
   song1 = minim.loadFile( musicPathway + angelFileName );
   song2 = minim.loadFile( musicPathway + spearofjusticeFileName );

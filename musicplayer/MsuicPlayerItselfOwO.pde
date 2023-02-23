@@ -7,8 +7,8 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-AudioPlayer song0, song1, song2, song3, song4, song5, song6, song7;
-AudioPlayer soundEffect0, soundEffect1;
+AudioPlayer song0, song1, song2;
+AudioPlayer soundEffect0;
 //
 int time = 7000;
 //
