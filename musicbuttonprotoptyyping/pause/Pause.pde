@@ -1,5 +1,10 @@
 //Global Variables
 //
+X = 5;
+Y = 5;
+X2 = 25;
+Y2 = 30;
+
 void setup() {
   //Display
   size(1080, 720); //width, height 
