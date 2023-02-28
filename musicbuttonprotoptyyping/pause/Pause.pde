@@ -1,14 +1,9 @@
 //Global Variables
 //
-X = 5;
-Y = 5;
-X2 = 25;
-Y2 = 30;
-
 void setup() {
   //Display
-  size(1080, 720); //width, height 
-  fullScreen(); //displayWisth, displayHeight
+  size(750, 750); //width, height 
+  //displayWisth, displayHeight
   //
   //Population: visual data
  // 
@@ -16,35 +11,36 @@ void setup() {
 //
 void draw() {
   //Stop Button
-  rect(X, Y, Width, Height);
+  fill(black);
+  rect(300, 400, 30, 30);
   //
   //Pause Button
-  rect( X, Y, Width, Height );
-  rect( X, Y, Width, Height );
+  //rect( , Y, Width, Height );
+  //rect( X, Y, Width, Height );
   //
   //Play Button
-  triangle( X1, Y1, X2, Y2, X3, Y3);
+  //triangle( X1, Y1, X2, Y2, X3, Y3);
   //
   //Mute button
   //Homework
   //
   //Fast Foward Button
-  triangle(X1, Y1, X2, Y2, X3, Y3);
-  triangle(X1, Y1, X2, Y2, X3, Y3);
+  //triangle(X1, Y1, X2, Y2, X3, Y3);
+  //triangle(X1, Y1, X2, Y2, X3, Y3);
   //
   //Next Button
-  triangle(X1, Y1, X2, Y2, X3, Y3);
-  rect( X, Y, Width, Height );
+  //triangle(X1, Y1, X2, Y2, X3, Y3);
+  //rect( X, Y, Width, Height );
   //
   //Prevecvious button
-  triangle(-X1, -Y1, -X2, -Y2, -X3, -Y3);
-  rect( -X, -Y, -Width, -Height );
+  //triangle(-X1, -Y1, -X2, -Y2, -X3, -Y3);
+  //rect( -X, -Y, -Width, -Height );
   //
   //Loop
   //Homework
-  ellipse( X, Y, WIdthDiamater, HightDiamater);
-  ellipse( X, Y, WIdthDiamater, HightDiamater);
-  triangle(X1, Y1, X2, Y2, X3, Y3);
+  //ellipse( X, Y, WIdthDiamater, HightDiamater);
+  //ellipse( X, Y, WIdthDiamater, HightDiamater);
+  //triangle(X1, Y1, X2, Y2, X3, Y3);
   //
   //Loop the song infinte
   //Looptheplaylist
