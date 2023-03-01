@@ -8,11 +8,19 @@ void setup() {
   //Population: visual data
  // 
 } //End setup
-//
+
+
+
 void draw() {
+  //List Box
+  //rect(listX, listY, listWidth, listHeight);
+  //
   //Stop Button
   fill(black);
-  rect(300, 400, 30, 30);
+  rect(stopX, stopY, stopWidth, stopHeight);
+  fill(white);
+  rect(stopX2, stopY2, stopWidth2, stopHeight2);
+  ellipse(SX, SY, WidthDiamenterS, HeightDiamenterS);
   //
   //Pause Button
   //rect( , Y, Width, Height );
