@@ -1,9 +1,12 @@
 //Varibles
 int stopX = 200;
 int stopY= 400;
-int stopWidth = 75;
-int stopHeight = 75;
+int ButtonWidth = 75;
+int ButtonHeight = 75;
+  int ButtonHeight2 = ButtonHeight / 2/3 * 5;
+  int ButtonWidth2 = ButtonWidth / 2/3* 5;
 //Colors
+color red=#FF0000;
 color black=#000000;
 color white=#FFFFFF;
 int r= 5;
@@ -11,21 +14,37 @@ int SX = stopX/2;
 int SY = stopY/2;
 //Back To Varibles
 //
-int appWidth = 750;
-int appHeight = 750;
-int pauseScaleWidth = 50;
-int pauseScaleHeight = 50;
-//Population: visual data
-  //Floating~
-  int startingX = appWidth * 1/2;
-  int startingY = appHeight * 1/2;
   //Math Shit
   int WidthDiamenterS = stopX - 1/2 / 1/2;
   int HeightDiamenterS = stopX - 1/2 / 1/2;
   int stopY2 = stopY + 8;
   int stopX2 = stopX +  8;
-  int stopHeight2 = stopHeight / 2/3 * 5;
-  int stopWidth2 = stopWidth / 2/3* 5;
+  int stopinsideWidth = ButtonWidth2 / 1/2;
+  int stopinsideHeight = ButtonHeight2 / 1/2;
+  
+//Play button
+  int pauseX = stopX - 100;
+  int pauseY = stopY;
+  int pauseX2 = stopX2 - 100;
+  int pauseY2 = stopY2;
+ //play stick 1;
+ int stick1Width = 10;
+ int stick1Height = 40;
+ int stick1Y = pauseY2 + 10;
+ int stick1X = pauseX2 + 15;
  
+ //play stick 2;
+ int stick2X = stick1X + 20;
+ int stick2Y = stick1Y;
+ 
+ //ListOfSongs
+ int listX = 55;
+ int listY = 25;
+ int listWidth = 625;
+ int listHeight = 250;
+ int listX2 = listX + 8;
+ int listY2 = listY + 8;
+ int listWidth2 = listWidth - 20;
+ int listHeight2 = listHeight - 20;
 
   

@@ -1,5 +1,6 @@
 //Global Variables
 //
+//float stopInsdieWidth, stopInsideHeight;
 void setup() {
   //Display
   size(750, 750); //width, height 
@@ -17,15 +18,28 @@ void draw() {
   //
   //Stop Button
   fill(black);
-  rect(stopX, stopY, stopWidth, stopHeight);
+  rect(stopX, stopY, ButtonHeight, ButtonWidth);
   fill(white);
-  rect(stopX2, stopY2, stopWidth2, stopHeight2);
-  ellipse(SX, SY, WidthDiamenterS, HeightDiamenterS);
+  rect(stopX2, stopY2, ButtonWidth2, ButtonHeight2);
+  fill(white);
+  //rect(stopinsideHeight, stopinsideHeight);
+  //ellipse(SX, SY, WidthDiamenterS, HeightDiamenterS);
   //
   //Pause Button
-  //rect( , Y, Width, Height );
-  //rect( X, Y, Width, Height );
+  fill(black);
+  rect(pauseX, pauseY, ButtonWidth, ButtonHeight);
+  fill(white);
+  rect( pauseX2, pauseY2, ButtonWidth2, ButtonHeight2 );
+  //Stick for pause Butoon
+  fill(red);
+  rect(stick1X, stick1Y, stick1Width, stick1Height);
+  rect(stick2X, stick2Y, stick1Width, stick1Height);
   //
+  //List
+  fill(black);
+  rect(listX, listY, listWidth, listHeight);
+  fill(white);
+  rect(listX2, listY2, listWidth2, listHeight2);
   //Play Button
   //triangle( X1, Y1, X2, Y2, X3, Y3);
   //
