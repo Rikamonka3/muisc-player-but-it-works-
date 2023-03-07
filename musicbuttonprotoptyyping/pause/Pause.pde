@@ -1,9 +1,14 @@
 //Global Variables
 //
 //float stopInsdieWidth, stopInsideHeight;
+PImage img;
 void setup() {
   //Display
+
   size(750, 750); //width, height 
+  img = loadImage("anime.jpg");
+  image(img, 0, 0);
+  
   //displayWisth, displayHeight
   //
   //Population: visual data
@@ -21,9 +26,8 @@ void draw() {
   rect(stopX, stopY, ButtonHeight, ButtonWidth);
   fill(white);
   rect(stopX2, stopY2, ButtonWidth2, ButtonHeight2);
-  fill(white);
-  //rect(stopinsideHeight, stopinsideHeight);
-  //ellipse(SX, SY, WidthDiamenterS, HeightDiamenterS);
+  fill(purple);
+  ellipse(buttonSX, buttonSY, stopButtonWidth, stopButtonHeight); 
   //
   //Pause Button
   fill(black);
@@ -40,8 +44,16 @@ void draw() {
   rect(listX, listY, listWidth, listHeight);
   fill(white);
   rect(listX2, listY2, listWidth2, listHeight2);
+   fill(white);
+   textSize(20);
+  text("Music Player", 10, 20);
   //Play Button
-  //triangle( X1, Y1, X2, Y2, X3, Y3);
+  fill(black);
+  rect(PlayX, PlayY, ButtonWidth, ButtonHeight);
+  fill(white);
+  rect(playX2, playY2, ButtonWidth2, ButtonHeight2 );
+  fill(purple);
+  //triangle(360, 450, 100, 200 , 250,300 );
   //
   //Mute button
   //Homework
