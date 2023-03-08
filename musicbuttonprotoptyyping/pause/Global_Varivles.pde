@@ -45,7 +45,7 @@ color purple=#A020F0;
  int playY2 = stopY2;
  int playX2 = stopX2 + 100;
  //PLay triangle
- //int X
+ 
  
  
  

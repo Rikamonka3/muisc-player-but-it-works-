@@ -13,11 +13,11 @@ void setup() {
   //
   //Population: visual data
  // 
-} //End setup
+///} //End setup
 
 
 
-void draw() {
+//void draw() {
   //List Box
   //rect(listX, listY, listWidth, listHeight);
   //
@@ -41,9 +41,9 @@ void draw() {
   //
   //List
   fill(black);
-  rect(listX, listY, listWidth, listHeight);
+  rect(listX, listY, listWidth + 30, listHeight);
   fill(white);
-  rect(listX2, listY2, listWidth2, listHeight2);
+  rect(listX2, listY2, listWidth2 + 30, listHeight2);
    fill(white);
    textSize(20);
   text("Music Player", 10, 20);
@@ -53,32 +53,59 @@ void draw() {
   fill(white);
   rect(playX2, playY2, ButtonWidth2, ButtonHeight2 );
   fill(purple);
-  //triangle(360, 450, 100, 200 , 250,300 );
+  //triangle(360, 450, 350, 250 , 250,300 );
   //
-  //Mute button
-  //Homework
   //
   //Fast Foward Button
+  fill(black);
+  rect(stopX + 200, stopY, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 200, stopY2, ButtonWidth2, ButtonHeight2);
   //triangle(X1, Y1, X2, Y2, X3, Y3);
   //triangle(X1, Y1, X2, Y2, X3, Y3);
   //
   //Next Button
+  fill(black);
+  rect(stopX + 300, stopY, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 300, stopY2, ButtonWidth2, ButtonHeight2);
   //triangle(X1, Y1, X2, Y2, X3, Y3);
   //rect( X, Y, Width, Height );
   //
   //Prevecvious button
+  fill(black);
+  rect(stopX + 400, stopY, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 400, stopY2, ButtonWidth2, ButtonHeight2);
   //triangle(-X1, -Y1, -X2, -Y2, -X3, -Y3);
   //rect( -X, -Y, -Width, -Height );
   //
   //Loop
   //Homework
+    fill(black);
+  rect(stopX, stopY + 100, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2, stopY2 + 100, ButtonWidth2, ButtonHeight2);
   //ellipse( X, Y, WIdthDiamater, HightDiamater);
   //ellipse( X, Y, WIdthDiamater, HightDiamater);
   //triangle(X1, Y1, X2, Y2, X3, Y3);
   //
   //Loop the song infinte
+  fill(black);
+  rect(stopX + 100, stopY + 100, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 100, stopY2 +100 , ButtonWidth2, ButtonHeight2);
   //Looptheplaylist
+  fill(black);
+  rect(stopX + 200, stopY + 100, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 200, stopY2 + 100, ButtonWidth2, ButtonHeight2);
   //Bothhomework
+  //random
+    fill(black);
+  rect(stopX + 300, stopY + 100, ButtonHeight, ButtonWidth);
+  fill(white);
+  rect(stopX2 + 300, stopY2 + 100, ButtonWidth2, ButtonHeight2);
 } //End draw
 //
 void keyPressed() {} //End keyPressed
