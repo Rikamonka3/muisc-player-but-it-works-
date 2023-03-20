@@ -16,7 +16,7 @@ Boolean activateWindow=false;
 //
 void setup() {
   size(300, 300);
-  loadMusic();
+  loadingMp4s();
   //
   //Illsutrate Garbage Collection of Local Variable
   //println("Music Pathway is", musicPathway); //local variable doesn't exit outside of void loadMusic() {}
@@ -38,7 +38,7 @@ void keyPressed() {
   //
   //Play sound effect when pressing a key, including delay
   soundEffect0.play();
-  soundEffect0.rewind();
+  
   delay(4000); //milliseconds read from draw() println() debugging
   //println( "KeyPrekssed:", soundEffect0.length() );
   //
