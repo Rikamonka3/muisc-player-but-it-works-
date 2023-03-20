@@ -14,11 +14,11 @@ void loadingMp4s() {
   String FuwaFileName = "fuwa.mp3";
   String angelFileName = "angel.mp3";
   String spearofjusticeFileName = "Spear_of_Justice.mid";
-  String ZeldaFileName = "Zelda.mp3";
+  String ImportFileName = "import.mp3";
   song0 = minim.loadFile( musicPathway + FuwaFileName );
   song1 = minim.loadFile( musicPathway + angelFileName );
   song2 = minim.loadFile( musicPathway + spearofjusticeFileName );
-  soundEffect0 = minim.loadFile( soundEffectPathway + ZeldaFileName );
+  soundEffect0 = minim.loadFile( soundEffectPathway + ImportFileName );
   //
   //println("Music Pathway is", musicPathway);
 }//End loadMusic
