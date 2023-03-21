@@ -11,6 +11,7 @@ void musicShortCuts() {
   if ( key == '1' ) song0.loop(0);
   if ( key == '2' ) song1.loop(0);
   if ( key == '3' ) song2.loop(0);
+  if ( key == 'U' || key == 'u') playPause();
   if ( key == 'P' || key=='p' ) autoPlay();
   if ( key == 'M' || key=='m' ) muteSong();
   if ( key == 'S' || key=='s' ) stopSong();
@@ -41,26 +42,46 @@ void quitButtonCode() {
   exit();
 }//End quitButtonCode
 //
-void muteSong() {}
- //mute
+void muteSong()
+{
+  if ( song0.isMuted() ) {
+    song0.unmute();
+  } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
+    song0.rewind(); //one solution
+    song0.unmute();
+    
+  }
+}
+    
+void playPause() {
+  if ( song0.isPlaying() ) {
+    song0.pause();
+    } else if ( song0.position() >= song0.length()*4/5 ) {
+      song0.play();
+    }
+}
 //
 void autoPlay() {}//End AutoPlay
 //
 //Stop = Rewind
-void stopSong(song0isPlaying() ) {
-  if () {
-    .pause();
-    .rewind();
-  } else {
-    song0.rewind();
-  }
-
-
-}//End Stp Song
+void stopSong()
+{
+if ( song0.isPlaying() ) {
+  song0.pause();
+  song0.rewind(); 
+} else {
+  song0.rewind();
+}
+}
+//End Stp Song
 //
-void fastForward() {}//End Fast Forward
+void fastForward() {
+  if ( song0.isPlaying() )song0.skip(-1000);
+}//End Fast Forward
 //
-void fastRewind() {}//End Fast Rewind
+void fastRewind() {
+  if(song0.isPlaying() )song0.skip(-1000);
+}//End Fast Rewind
 //
 void nextSong() {}//End Next Song
 //

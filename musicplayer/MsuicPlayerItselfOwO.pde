@@ -38,12 +38,9 @@ void keyPressed() {
   //
   //Play sound effect when pressing a key, including delay
   soundEffect0.play();
-  
-  delay(4000); //milliseconds read from draw() println() debugging
-  //println( "KeyPrekssed:", soundEffect0.length() );
-  //
+  soundEffect0.rewind();
+   delay(2000); 
   keyPressedShortCuts();
-  quitButtons();
   //
 } //End keyPressed
 //
