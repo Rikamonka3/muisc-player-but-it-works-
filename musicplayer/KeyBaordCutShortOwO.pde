@@ -46,7 +46,17 @@ void muteSong() {}
 //
 void autoPlay() {}//End AutoPlay
 //
-void stopSong() {}//End Stp Song
+//Stop = Rewind
+void stopSong(song0isPlaying() ) {
+  if () {
+    .pause();
+    .rewind();
+  } else {
+    song0.rewind();
+  }
+
+
+}//End Stp Song
 //
 void fastForward() {}//End Fast Forward
 //
