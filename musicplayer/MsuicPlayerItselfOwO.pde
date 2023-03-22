@@ -7,9 +7,14 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim;
-AudioPlayer song0, song1, song2;
-AudioPlayer soundEffect0;
+//Array uwu: AudioPlayer song0, song1, song2;
+int numberOfmp4s = 5;
+int numberOfeffects = 2;
+AudioPlayer[] songs = new AudioPlayer[numberOfmp4s]; // 
+AudioPlayer[] soundEffects = new AudioPlayer[numberOfeffects];
+int currentSong = (numberOfmp4s - 1);
 //
+
 int time = 7000;
 //
 Boolean activateWindow=false;
@@ -37,8 +42,9 @@ void draw() {
 void keyPressed() {
   //
   //Play sound effect when pressing a key, including delay
-  soundEffect0.play();
-  soundEffect0.rewind();
+  soundEffects[1].play();
+  soundEffects[1].rewind();
+  soundEffects[1].stop
    delay(2000); 
   keyPressedShortCuts();
   //

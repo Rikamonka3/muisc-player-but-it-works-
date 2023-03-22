@@ -8,9 +8,9 @@ void keyPressedShortCuts() {
 void musicShortCuts() {
   //Key Board Short Cuts for Music, use numbers
   //Hint: notice human numbering vs. computer numbering9
-  if ( key == '1' ) song0.loop(0);
-  if ( key == '2' ) song1.loop(0);
-  if ( key == '3' ) song2.loop(0);
+  if ( key == '1' ) songs[0].loop(0);
+  if ( key == '2' ) songs[1].loop(0);
+  if ( key == '3' ) songs[2].loop(0);
   if ( key == 'U' || key == 'u') playPause();
   if ( key == 'P' || key=='p' ) autoPlay();
   if ( key == 'M' || key=='m' ) muteSong();
@@ -36,7 +36,7 @@ void quitButtons() {
 }//End quitButtons
 //
 void quitButtonCode() {
-  soundEffect0.loop(0); //only need partial file, use .play(int millis)
+  soundEffects[0].loop(0); //only need partial file, use .play(int millis)
   //Visual Image or Text of Goodbye
   delay(3000); //alternate way of playing sound once
   exit();
@@ -44,20 +44,20 @@ void quitButtonCode() {
 //
 void muteSong()
 {
-  if ( song0.isMuted() ) {
-    song0.unmute();
-  } else if ( song0.isMuted() && song0.position() >= song0.length()*4/5 ) {
-    song0.rewind(); //one solution
-    song0.unmute();
+  if ( songs[0].isMuted() ) {
+    songs[0].unmute();
+  } else if ( songs[0].isMuted() && songs[0].position() >= songs[0].length()*4/5 ) {
+    songs[0].rewind(); //one solution
+    songs[0].unmute();
     
   }
 }
     
 void playPause() {
-  if ( song0.isPlaying() ) {
-    song0.pause();
-    } else if ( song0.position() >= song0.length()*4/5 ) {
-      song0.play();
+  if ( songs[0].isPlaying() ) {
+    songs[0].pause();
+    } else if ( songs[0].position() >= songs[0].length()*4/5 ) {
+      songs[0].play();
     }
 }
 //
@@ -66,24 +66,25 @@ void autoPlay() {}//End AutoPlay
 //Stop = Rewind
 void stopSong()
 {
-if ( song0.isPlaying() ) {
-  song0.pause();
-  song0.rewind(); 
+if ( songs[0].isPlaying() ) {
+  songs[0].pause();
+  songs[0].rewind(); 
 } else {
-  song0.rewind();
+  songs[0].rewind();
 }
 }
 //End Stp Song
 //
 void fastForward() {
-  if ( song0.isPlaying() )song0.skip(-1000);
+  if ( songs[0].isPlaying() )songs[0].skip(-1000);
 }//End Fast Forward
 //
 void fastRewind() {
-  if(song0.isPlaying() )song0.skip(-1000);
+  if(songs[0].isPlaying() )songs[0].skip(-1000);
 }//End Fast Rewind
 //
-void nextSong() {}//End Next Song
+void nextSong(){} 
+//End Next Song
 //
 void previousSong() {}//End Previous Song
 //
