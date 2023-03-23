@@ -17,7 +17,7 @@ int currentSong = (numberOfmp4s - 1);
 
 int time = 7000;
 //
-Boolean activateWindow=false;
+Boolean activateWindow=false, autoPlayON=false;
 //
 void setup() {
   size(300, 300);
@@ -30,21 +30,14 @@ void setup() {
 //
 void draw() {
   if ( activateWindow == true ) background(0);
-  //
-  //Debugging the Effective Length of the Sound Effect to code a delay
-  //println ( soundEffect0.position(), soundEffect0.length() );
-  //println ("When does the sound stop? Indicates delay");
-  // Debugging a sound to shorten a file play
-  //println( soundEffect1.position(), soundEffect1.length() );
-  //
+  if (autoPlayON ==true ) autoPlayMusic();
+print(autoPlayON, songs[currentSong].isPlaying(), currentSong, songs[currentSong].position(), songs[currentSong].length());
 } //End draw
 //
 void keyPressed() {
   //
   //Play sound effect when pressing a key, including delay
   soundEffects[1].play();
-  soundEffects[1].rewind();
-  soundEffects[1].stop
    delay(2000); 
   keyPressedShortCuts();
   //

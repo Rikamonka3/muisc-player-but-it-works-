@@ -8,18 +8,29 @@ void keyPressedShortCuts() {
 void musicShortCuts() {
   //Key Board Short Cuts for Music, use numbers
   //Hint: notice human numbering vs. computer numbering9
-  if ( key == '1' ) songs[0].loop(0);
+  //Note: if(key=='1')song0.loop(0); will change to array & index introduction
+  if ( key == '1' ) songs[0].loop(0); //.rewind() is included in .loop()
   if ( key == '2' ) songs[1].loop(0);
   if ( key == '3' ) songs[2].loop(0);
-  if ( key == 'U' || key == 'u') playPause();
-  if ( key == 'P' || key=='p' ) autoPlay();
-  if ( key == 'M' || key=='m' ) muteSong();
-  if ( key == 'S' || key=='s' ) stopSong();
-  if ( key == 'F' || key=='f' ) fastForward();
-  if ( key == 'R' || key=='r' ) fastRewind();
-  if ( key == 'N' || key=='n' ) nextSong();
-  if ( key == 'B' || key=='b' ) previousSong();
-  if ( key == 'L' || key=='l' ) loopSong();
+  if ( key == '4' ) songs[3].loop(0);
+  if ( key == '5' ) songs[4].loop(0);
+  if ( key == '6' ) songs[5].loop(0);
+  if ( key == '7' ) songs[6].loop(0);
+  if ( key == '8' ) songs[7].loop(0);
+  //
+  //Students to make these smarter
+  //Separated into single songs and multiple songs
+  //
+  if ( key == 'P' || key=='p' ) playPause(); //teacher started
+  //Note: for this Auto Play to Work, song must be playing
+  if ( key == 'U' || key=='u' ) autoPlay(); //teacher started
+  if ( key == 'M' || key=='m' ) mute(); //teacher started
+  if ( key == 'S' || key=='s' ) stopSong(); //teacher started
+  if ( key == 'F' || key=='f' ) fastForward(); //teacher started
+  if ( key == 'R' || key=='r' ) fastRewind(); //teacher started
+  if ( key == 'N' || key=='n' ) nextSong(); //psuedo code only
+  if ( key == 'B' || key=='b' ) previousSong(); //psuedo code only
+  if ( key == 'L' || key=='l' ) loopSong(); //loops current song infinitely
   if ( key == 'O' || key=='o' ) loopPlaylist(); //entire playlist
   if ( key == 'W' || key=='w' ) shufflePlaylist(); //shuffle
   if ( key == 'E' || key=='e' ) loopAndShuffle(); //Loop and Shuffle
@@ -36,63 +47,121 @@ void quitButtons() {
 }//End quitButtons
 //
 void quitButtonCode() {
-  soundEffects[0].loop(0); //only need partial file, use .play(int millis)
+  soundEffects[1].loop(0); //only need partial file, use .play(int millis)
   //Visual Image or Text of Goodbye
   delay(3000); //alternate way of playing sound once
   exit();
 }//End quitButtonCode
 //
-void muteSong()
-{
-  if ( songs[0].isMuted() ) {
-    songs[0].unmute();
-  } else if ( songs[0].isMuted() && songs[0].position() >= songs[0].length()*4/5 ) {
-    songs[0].rewind(); //one solution
-    songs[0].unmute();
-    
+/* Note: must define a difference between auto play and loop playlist
+ */
+void autoPlay() {
+  //Note: plays one song, then the next automatically
+  //Asks the computer if a song is playing, continually
+  //When current song finishes, it rewinds current song and plays the next song
+  //
+  /*ERROR: autoplay never stops the song if it is enabled
+  - once the song stops, or by pressing STOP
+  - next song will start
+  - might even start the next song at the same time as the current song
+  */
+  if ( autoPlayON==false ) {
+    autoPlayON=true;
+  } else {
+    autoPlayON=false;
+    songs[currentSong].pause(); //enables play to continue when auto play is turned off
+    //songs[currentSong].rewind();
   }
-}
-    
-void playPause() {
-  if ( songs[0].isPlaying() ) {
-    songs[0].pause();
-    } else if ( songs[0].position() >= songs[0].length()*4/5 ) {
-      songs[0].play();
-    }
-}
+}//End AutoPlay
+void autoPlayMusic() {
+  //ERROR: ArrayListOutOfBounds
+  if ( songs[currentSong].isPlaying()==false ) {
+    currentSong++;
+    songs[currentSong].play();
+  }
+}//End Auto Play Music
 //
-void autoPlay() {}//End AutoPlay
+void playPause()
+{
+  //Ask computer if the song is playing
+  //Note: remember to use Auto Play
+  //ERROR: song will not play if at the end
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+  } else if ( songs[currentSong].position() >= songs[currentSong].length()*4/5 ) { //80% of the song
+    songs[currentSong].rewind();
+    songs[currentSong].play();
+    //Remember, Auto Play is better b/c it plays the next song
+  } else {
+    //autoPlay(), is better here
+    songs[currentSong].play(); //Interim solution
+  }
+}//End Play Pause
 //
-//Stop = Rewind
+void mute()
+{
+  //MUTE, not PAUSE, only affects the speakers
+  //Based on a question: is the song muted
+  //ERROR: this MUTE Button only works when the song is playing
+  //ERROR: user will spam mute if song is at end of file
+  if ( songs[currentSong].isMuted() ) {
+    songs[currentSong].unmute();
+  } else if ( songs[currentSong].isMuted() && songs[currentSong].position() >= songs[currentSong].length()*4/5 ) {
+    songs[currentSong].rewind(); //one solution
+    songs[currentSong].unmute();
+    //
+    /* Other solutions
+     - unmute the next song
+     - show notification speakers are muted and song will not play
+     */
+  } else {
+    songs[currentSong].mute(); //simple solution, contains two ERRORS, see above
+  }
+}//End Mute
+//
 void stopSong()
 {
-if ( songs[0].isPlaying() ) {
-  songs[0].pause();
-  songs[0].rewind(); 
-} else {
-  songs[0].rewind();
-}
-}
-//End Stp Song
+  //Based on a question: is the song playing
+  //Hint: would this fix the ERROR of the MUTE Button
+  //Note: STOP is actually afancy rewind, no ERRORS
+  if ( songs[currentSong].isPlaying() ) {
+    songs[currentSong].pause();
+    songs[currentSong].rewind();
+  } else {
+    songs[currentSong].rewind();
+  }
+}//End Stop Song
 //
 void fastForward() {
-  if ( songs[0].isPlaying() )songs[0].skip(-1000);
+  //Asks comptuer if the song is playing
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(3000); //parameter in milliseconds
 }//End Fast Forward
 //
 void fastRewind() {
-  if(songs[0].isPlaying() )songs[0].skip(-1000);
+  if ( songs[currentSong].isPlaying() ) songs[currentSong].skip(-3000); //parameter in milliseconds
 }//End Fast Rewind
 //
-void nextSong(){} 
-//End Next Song
+void nextSong() {
+  if  ( songs[currentSong].isPlaying() )  {
+  } else if (currentSong >= songs.length-1 ) {
+    currentSong = 0;
+  } else  songs[currentSong].rewind();
+  }
 //
-void previousSong() {}//End Previous Song
+void previousSong() {
+  currentSong--;
+}//End Previous Song
 //
-void loopSong() {}//End Loop Song
+void loopSong() {
+}//End Loop Song
 //
-void loopPlaylist() {}//End Loop the Playlist
+void loopPlaylist() {
+}//End Loop the Playlist
 //
-void shufflePlaylist() {}//End Shuffle the Playlist()
+void shufflePlaylist() {
+}//End Shuffle the Playlist()
 //
-void loopAndShuffle() {}//End Loop And Shuffle
-//End Key Board Short Cuts Sub Program
+void loopAndShuffle() {
+  //Student to finish
+  //Hint: random() and casting, see Global Variables' currentSong declaration
+}//End Loop And Shuffle
