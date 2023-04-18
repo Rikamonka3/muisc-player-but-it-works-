@@ -1,14 +1,22 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //Global Variables
 //
 //float stopInsdieWidth, stopInsideHeight;
 PImage img;
 void setup() {
-  //Display
-
+  loadingMp4s();
+  //
+  //Illsutrate Garbage Collection of Local Variable
+  //println("Music Pathway is", musicPathway); //local variable doesn't exit outside of void loadMusic() {}
   size(750, 750); //width, height 
   img = loadImage("anime.jpg");
-  image(img, 0, 0);
-  
+  image(img, 0, 0);  
   //displayWisth, displayHeight
   //
   //Population: visual data
@@ -108,8 +116,17 @@ void setup() {
   rect(stopX2 + 300, stopY2 + 100, ButtonWidth2, ButtonHeight2);
 } //End draw
 //
-void keyPressed() {} //End keyPressed
-//
-void mousePressed() {} //End mousePressed
+void keyPressed() {
+  //
+  //Play sound effect when pressing a key, including delay
+  soundEffects[1].play();
+   delay(2000); 
+  keyPressedShortCuts();
+  //
+} //End keyPressed
+  ////
+void mousePressed() {
+  if ( activateWindow==false ) activateWindow = true;
+} //End mousePressed
 //
 //End MAIN Program
